@@ -27,10 +27,12 @@ def gen_frames():  # generate frame by frame from camera
             if counter % 3  == 0:
 
                 pose_idx = classifier.get_pose(frame)
-                pose,pred = pose_check.prediction(pose_idx,frame)
+                feedback ,pred = pose_check.prediction(pose_idx,frame)
+                if feedback == "None":
+                    print("Person Not Detected, Please Try Again!!")
                 canvas = pose_check.pose_estimator.draw_keypoints(frame)
 
-                print(pred)
+                print(feedback)
                 print(pose)
 #                 cv2.imshow('demo', canvas)
 #                 if cv2.waitKey(1) & 0xFF == ord('q'):

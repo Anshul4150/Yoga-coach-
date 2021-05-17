@@ -23,6 +23,8 @@ def error_check(ground_truth,pose_angles):
 def prediction(indx,image):
     
     test_angles = pose_estimator.get_angle_dict(image)
+    if test_angles == False:
+        return "None", "No pose detected"
     ground_truth_pose = ground_truth[id_to_pose[indx]]
     error = error_check([*ground_truth_pose.values()],[*test_angles.values()])
     
