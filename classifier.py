@@ -34,12 +34,12 @@ class Resize(object):
             pad = (0,224-h-pad_val,0,pad_val)
         return ImageOps.expand(im.resize((w,h),resample=Image.BILINEAR), pad)
 
-def get_model():
+def get_model(device):
     """
         Takes in the state dictionary and loads it into mobile-net
         Returns the model variable
     """
-    state_dict = torch.load("checkpoint_9.pth",map_location=torch.device('cpu'))
+    state_dict = torch.load("checkpoint_9.pth",map_location=torch.device(device))
     model = models.mobilenet_v3_large(pretrained=False)
 
     model.classifier = nn.Sequential(nn.Linear(960,1280),
@@ -65,7 +65,8 @@ def get_pose(image):
         Takes an image as an input
         Return
     """
-    model = get_model()
+    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    model = get_model(device)
     transform = get_transform()
     
     model.eval()
@@ -79,7 +80,7 @@ def get_pose(image):
     
     with torch.no_grad():
         
-        out = model(image_test)
+        out = model(image_test.to(device))
         probs = torch.exp(out)
         top_p, top_class = probs.topk(1,dim=1)
         
