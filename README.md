@@ -14,7 +14,7 @@ the image.
 <br />
 <p align="center">
   <a href="https://github.com/divyanshjoshi/Yoga-coach">
-    <img src="pipeline.PNG" alt="pipeline">
+    <img src="pipeline.JPG" alt="pipeline">
   </a>
 </p>
 
@@ -23,16 +23,24 @@ the image.
    ```sh
    git clone https://github.com/your_username_/Yoga-coach-.git
    ```
-3. Install all the prequisties using the requirements.txt file 
+2. Install all the prequisties using the requirements.txt file 
    ```sh
    pip install -r requirements.txt
    ```
-4.  Install NPM packages
-   ```sh
-   python app.py
-   ```
+3.  Run app.py in terminal
+     ```sh
+     python app.py
+     ```
  
 ### Results
+<br />
+<p align="center">
+  <a href="https://github.com/divyanshjoshi/Yoga-coach">
+    <img src="in action.png" alt="pipeline">
+  </a>
+</p>
 
-
-### [Reference](https://blog.miguelgrinberg.com/post/video-streaming-with-flask)
+### Refrences
+#### [Yoga_82 Dataset](https://arxiv.org/abs/2004.10362)
+#### [Kaggle Dataset](https://www.kaggle.com/niharika41298/yoga-poses-dataset)
+#### [Blaze Pose](https://arxiv.org/pdf/2006.10204.pdf)
