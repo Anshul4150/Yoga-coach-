@@ -11,7 +11,12 @@ the image.
 
 ### Pipeline for yoga-coach
 
-[![Product Name Screen Shot][product-screenshot]](pipeline.JPG)
+<br />
+<p align="center">
+  <a href="https://github.com/divyanshjoshi/Yoga-coach">
+    <img src="pipeline.PNG" alt="pipeline">
+  </a>
+</p>
 
 ### Getting Started
 1. Fork and Clone the repo
