@@ -1,28 +1,46 @@
-# Live-Streaming-using-OpenCV-Flask
-A Flask Web-App to stream live from local webcam or CCTV (rtsp link)
+# YOGA COACH - A human pose estimation application
+We present a yoga coach which helps an individual correct their posture using modern deep learning techniques.
+Given a video/image our coach helps figure out whether a person is doing the classified pose correctly basedon the similarity of angles between ground truth and
+the image.
 
-## Use Built-in Webcam of Laptop
+## Built with 
 
-### Put Zero (O) in cv2.VideoCapture(0)
+* [PyTorch](https://pytorch.org/)
+* [MediaPipe](https://google.github.io/mediapipe/solutions/pose.html)
+* [Flask](https://flask.palletsprojects.com/en/2.0.x/)
 
-``` cv2.VideoCapture(0) ```
+### Pipeline for yoga-coach
 
-### Use Ip Camera/CCTV/RTSP Link
-``` cv2.VideoCapture('rtsp://username:password@camera_ip_address:554/user=username_password='password'_channel=channel_number_stream=0.sdp')  ```
+<br />
+<p align="center">
+  <a href="https://github.com/divyanshjoshi/Yoga-coach">
+    <img src="pipeline.JPG" alt="pipeline">
+  </a>
+</p>
 
-### Example RTSP Link
-``` cv2.VideoCapture('rtsp://mamun:123456@101.134.16.117:554/user=mamun_password=123456_channel=0_stream=0.sdp') ```
+### Getting Started
+1. Fork and Clone the repo
+   ```sh
+   git clone https://github.com/your_username_/Yoga-coach-.git
+   ```
+2. Install all the prequisties using the requirements.txt file 
+   ```sh
+   pip install -r requirements.txt
+   ```
+3.  Run app.py in terminal
+     ```sh
+     python app.py
+     ```
+ 
+### Results
+<br />
+<p align="center">
+  <a href="https://github.com/divyanshjoshi/Yoga-coach">
+    <img src="in action.png" alt="pipeline">
+  </a>
+</p>
 
-### Change Channel Number to Change the Camera
-``` cv2.VideoCapture('rtsp://mamun:123456@101.134.16.117:554/user=mamun_password=123456_channel=1_stream=0.sdp') ```
-
-### Display the resulting frame in browser
-``` cv2.imencode('.jpg', frame)[1].tobytes() ```
-
-### Or this one
-```
-net , buffer = cv2.imencode('.jpg', frame)
-buffer.tobytes()              
-```
-
-### [Reference](https://blog.miguelgrinberg.com/post/video-streaming-with-flask)
+### Refrences
+#### [Yoga_82 Dataset](https://arxiv.org/abs/2004.10362)
+#### [Kaggle Dataset](https://www.kaggle.com/niharika41298/yoga-poses-dataset)
+#### [Blaze Pose](https://arxiv.org/pdf/2006.10204.pdf)
